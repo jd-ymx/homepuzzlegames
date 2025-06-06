@@ -1,0 +1,162 @@
+{
+  "categories": [
+    {
+      "id": "puzzle",
+      "name": "益智游戏",
+      "nameEn": "Puzzle Games",
+      "icon": "🧩"
+    },
+    {
+      "id": "action",
+      "name": "动作游戏", 
+      "nameEn": "Action Games",
+      "icon": "⚡"
+    },
+    {
+      "id": "strategy",
+      "name": "策略游戏",
+      "nameEn": "Strategy Games", 
+      "icon": "🎯"
+    },
+    {
+      "id": "casual",
+      "name": "休闲游戏",
+      "nameEn": "Casual Games",
+      "icon": "🎮"
+    }
+  ],
+  "games": [
+    {
+      "id": "2048",
+      "title": "2048",
+      "description": "经典数字合并益智游戏",
+      "descriptionEn": "Classic number merging puzzle game with addictive gameplay",
+      "category": "puzzle",
+      "url": "https://play2048.co/",
+      "thumbnail": "https://play2048.co/favicon.ico",
+      "featured": true,
+      "tags": ["numbers", "puzzle", "classic", "addictive"]
+    },
+    {
+      "id": "tetris",
+      "title": "Tetris",
+      "description": "经典的俄罗斯方块游戏",
+      "descriptionEn": "Classic falling blocks puzzle game that never gets old",
+      "category": "puzzle", 
+      "url": "https://tetris.com/play-tetris",
+      "thumbnail": "https://tetris.com/favicon.ico",
+      "featured": true,
+      "tags": ["blocks", "classic", "puzzle", "arcade"]
+    },
+    {
+      "id": "snake",
+      "title": "Snake Game",
+      "description": "经典贪吃蛇游戏",
+      "descriptionEn": "Guide the snake to eat food and grow longer in this timeless classic",
+      "category": "casual",
+      "url": "https://www.google.com/fbx?fbx=snake_arcade",
+      "thumbnail": "https://www.google.com/favicon.ico",
+      "featured": false,
+      "tags": ["classic", "casual", "simple", "retro"]
+    },
+    {
+      "id": "pacman",
+      "title": "Pac-Man",
+      "description": "经典街机游戏吃豆人",
+      "descriptionEn": "Navigate mazes and collect dots while avoiding colorful ghosts",
+      "category": "action",
+      "url": "https://www.google.com/fbx?fbx=pacman",
+      "thumbnail": "https://www.google.com/favicon.ico", 
+      "featured": true,
+      "tags": ["arcade", "classic", "action", "maze"]
+    },
+    {
+      "id": "chess",
+      "title": "Chess.com",
+      "description": "在线国际象棋游戏",
+      "descriptionEn": "Play chess online against players worldwide or AI opponents",
+      "category": "strategy",
+      "url": "https://www.chess.com/play/online",
+      "thumbnail": "https://www.chess.com/favicon.ico",
+      "featured": false,
+      "tags": ["strategy", "chess", "intelligence", "multiplayer"]
+    },
+    {
+      "id": "sudoku",
+      "title": "Sudoku",
+      "description": "经典数独益智游戏",
+      "descriptionEn": "Fill the grid with numbers in this classic logic puzzle",
+      "category": "puzzle",
+      "url": "https://sudoku.com/",
+      "thumbnail": "https://sudoku.com/favicon.ico",
+      "featured": false,
+      "tags": ["numbers", "logic", "puzzle", "brain-training"]
+    },
+    {
+      "id": "wordle",
+      "title": "Wordle",
+      "description": "每日单词猜谜游戏",
+      "descriptionEn": "Guess the daily five-letter word in six attempts or less",
+      "category": "puzzle",
+      "url": "https://www.nytimes.com/games/wordle/index.html",
+      "thumbnail": "https://www.nytimes.com/favicon.ico",
+      "featured": true,
+      "tags": ["words", "daily", "puzzle", "viral"]
+    },
+    {
+      "id": "agar-io",
+      "title": "Agar.io",
+      "description": "多人在线细胞吞噬游戏",
+      "descriptionEn": "Control a cell and absorb others to become the largest organism",
+      "category": "action",
+      "url": "https://agar.io/",
+      "thumbnail": "https://agar.io/favicon.ico",
+      "featured": false,
+      "tags": ["multiplayer", "competitive", "io-game", "survival"]
+    },
+    {
+      "id": "slither-io",
+      "title": "Slither.io",
+      "description": "多人在线贪吃蛇大作战",
+      "descriptionEn": "Become the longest slither in this multiplayer snake game",
+      "category": "action",
+      "url": "https://slither.io/",
+      "thumbnail": "https://slither.io/favicon.ico",
+      "featured": false,
+      "tags": ["multiplayer", "snake", "competitive", "io-game"]
+    },
+    {
+      "id": "candy-crush",
+      "title": "Candy Crush Saga",
+      "description": "经典三消糖果游戏",
+      "descriptionEn": "Match colorful candies in this sweet and addictive puzzle game",
+      "category": "casual",
+      "url": "https://king.com/game/candycrushsaga",
+      "thumbnail": "https://king.com/favicon.ico",
+      "featured": false,
+      "tags": ["match-3", "candy", "casual", "colorful"]
+    },
+    {
+      "id": "crossword",
+      "title": "Daily Crossword",
+      "description": "每日填字游戏",
+      "descriptionEn": "Challenge yourself with daily crossword puzzles of varying difficulty",
+      "category": "puzzle",
+      "url": "https://www.washingtonpost.com/crossword-puzzles/daily/",
+      "thumbnail": "https://www.washingtonpost.com/favicon.ico",
+      "featured": false,
+      "tags": ["words", "crossword", "daily", "challenge"]
+    },
+    {
+      "id": "geometry-dash",
+      "title": "Geometry Dash",
+      "description": "节奏跳跃动作游戏",
+      "descriptionEn": "Jump and fly through danger in this rhythm-based action platformer",
+      "category": "action",
+      "url": "https://scratch.mit.edu/projects/105500895/",
+      "thumbnail": "https://scratch.mit.edu/favicon.ico",
+      "featured": false,
+      "tags": ["rhythm", "platformer", "challenging", "music"]
+    }
+  ]
+} 
