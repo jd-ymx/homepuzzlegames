@@ -23,9 +23,48 @@
       "name": "休闲游戏",
       "nameEn": "Casual Games",
       "icon": "🎮"
+    },
+    {
+      "id": "roleplay",
+      "name": "角色扮演",
+      "nameEn": "Role Playing Games",
+      "icon": "🎭"
     }
   ],
   "games": [
+    {
+      "id": "cantata",
+      "title": "Cantata",
+      "description": "音乐与命运交织的史诗互动小说",
+      "descriptionEn": "Embark on an epic musical journey where your voice holds the power to heal or destroy. Experience a deeply emotional interactive fiction set in a world where music connects all living things. As one of the persecuted Iredicci people, navigate love, loss, and the choice between vengeance and redemption in this award-winning narrative adventure.",
+      "category": "roleplay",
+      "url": "https://firfireweed.itch.io/cantata",
+      "thumbnail": "/image/cantata/gMg1vV.png",
+      "screenshots": [
+        "/image/cantata/gMg1vV.png",
+        "/image/cantata/M69c+i.jpeg",
+        "/image/cantata/yv579L.jpeg",
+        "/image/cantata/+eRMpw.jpeg",
+        "/image/cantata/NfD8ra.jpeg"
+      ],
+      "featured": true,
+      "tags": ["game", "games", "web", "roleplay", "free"]
+    },
+    {
+      "id": "podvodsk",
+      "title": "Podvodsk",
+      "description": "建造深海城市的策略解谜游戏",
+      "descriptionEn": "Dive deep into the ocean and build your underwater metropolis! Master the art of strategic city planning as you drag and drop building schematics to create the deepest underwater civilization. Balance resources, plan tactically, and discover how far into the abyss your architectural dreams can take you in this atmospheric puzzle adventure.",
+      "category": "puzzle",
+      "url": "https://fourquarters.itch.io/podvodsk",
+      "thumbnail": "/image/podvodsk/1.png",
+      "screenshots": [
+        "/image/podvodsk/1.png",
+        "/image/podvodsk/2.png"
+      ],
+      "featured": true,
+      "tags": ["game", "games", "web", "puzzle", "free"]
+    },
     {
       "id": "2048",
       "title": "2048",

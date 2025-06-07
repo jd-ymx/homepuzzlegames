@@ -7,6 +7,7 @@ export interface Game {
   category: string
   url: string
   thumbnail: string
+  screenshots?: string[]
   featured: boolean
   tags: string[]
 }

@@ -167,8 +167,34 @@ export default function GameDetailClient({ game, relatedGames, categories }: Gam
                 </div>
               </div>
 
-              {/* 游戏缩略图 (可选) */}
-              {game.thumbnail && (
+              {/* 游戏截图画廊 */}
+              {game.screenshots && game.screenshots.length > 0 && (
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Game Screenshots</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {game.screenshots.map((screenshot, index) => (
+                      <div key={index} className="relative group">
+                        <img
+                          src={screenshot}
+                          alt={`${game.title} screenshot ${index + 1}`}
+                          className="w-full aspect-[9/16] object-cover rounded-lg bg-gray-100 transition-transform duration-200 group-hover:scale-105 cursor-pointer shadow-sm hover:shadow-md"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none'
+                          }}
+                          onClick={() => {
+                            // 点击图片时在新窗口中打开大图
+                            window.open(screenshot, '_blank', 'noopener,noreferrer')
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-200 rounded-lg"></div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* 主缩略图 (如果没有screenshots则显示) */}
+              {(!game.screenshots || game.screenshots.length === 0) && game.thumbnail && (
                 <div className="relative">
                   <img
                     src={game.thumbnail}

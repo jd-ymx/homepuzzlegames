@@ -123,6 +123,7 @@ export default function GameCard({
           {game.category === 'action' && '⚡'}
           {game.category === 'strategy' && '🎯'}
           {game.category === 'casual' && '🎮'}
+          {game.category === 'roleplay' && '🎭'}
           <span className="ml-1 capitalize">{game.category}</span>
         </div>
       </div>
