@@ -37,7 +37,7 @@ export interface HeaderProps {
 
 export interface GameCardProps {
   game: Game
-  onClick?: (game: Game) => void
+  onClick?: ((game: Game) => void) | undefined
   size?: 'small' | 'medium' | 'large' | 'compact'
   featured?: boolean
 }

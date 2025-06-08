@@ -34,7 +34,7 @@ export default function FeaturedSection({ games, onGameClick }: FeaturedSectionP
           <GameCard 
             key={game.id} 
             game={game} 
-            onClick={onGameClick}
+            onClick={onGameClick || undefined}
             size={index === 0 && games.length > 1 ? 'large' : 'medium'}
             featured={true}
           />

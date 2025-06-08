@@ -326,17 +326,11 @@ export default function GameDetailClient({ game, relatedGames, categories }: Gam
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {relatedGames.map((relatedGame, index) => (
-                    <div
+                    <GameCard 
                       key={relatedGame.id}
-                      onClick={() => handleRelatedGameClick(relatedGame, index)}
-                      className="cursor-pointer"
-                    >
-                      <GameCard 
-                        game={relatedGame}
-                        size="medium"
-                        onClick={() => handleRelatedGameClick(relatedGame, index)}
-                      />
-                    </div>
+                      game={relatedGame}
+                      size="medium"
+                    />
                   ))}
                 </div>
               </div>

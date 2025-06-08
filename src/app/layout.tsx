@@ -9,7 +9,11 @@ export const metadata: Metadata = {
   description: '发现和畅玩最优质的网页游戏，包含益智、动作、策略等多种类型游戏',
   keywords: '网页游戏,在线游戏,免费游戏,益智游戏,动作游戏,策略游戏',
   authors: [{ name: 'GameHub Team' }],
-  viewport: 'width=device-width, initial-scale=1',
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({

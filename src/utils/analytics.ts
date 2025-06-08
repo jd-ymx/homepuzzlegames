@@ -128,7 +128,7 @@ export const GameAnalytics = {
 // 性能监控
 export class PerformanceMonitor {
   private startTime: number = Date.now()
-  private gameId?: string
+  private gameId: string | undefined
 
   constructor(gameId?: string) {
     this.gameId = gameId
@@ -161,8 +161,8 @@ export class PerformanceMonitor {
     if (!perfData) return
 
     const metrics: PagePerformanceMetrics = {
-      loadTime: perfData.loadEventEnd - perfData.navigationStart,
-      domContentLoaded: perfData.domContentLoadedEventEnd - perfData.navigationStart
+      loadTime: perfData.loadEventEnd - perfData.fetchStart,
+      domContentLoaded: perfData.domContentLoadedEventEnd - perfData.fetchStart
     }
 
     // 获取 FCP 和 LCP
@@ -209,15 +209,17 @@ export class PerformanceMonitor {
       })
       lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] })
 
-      // 超时处理
+      // 设置超时，避免无限等待
       setTimeout(() => {
-        fcpObserver.disconnect()
-        lcpObserver.disconnect()
-        resolve({
-          firstContentfulPaint: fcp,
-          largestContentfulPaint: lcp
-        })
-      }, 10000) // 10秒超时
+        const result: Partial<PagePerformanceMetrics> = {}
+        if (fcp !== undefined) {
+          result.firstContentfulPaint = fcp
+        }
+        if (lcp !== undefined) {
+          result.largestContentfulPaint = lcp
+        }
+        resolve(result)
+      }, 5000)
     })
   }
 
@@ -245,7 +247,7 @@ export class PerformanceMonitor {
 export class UserJourneyTracker {
   private steps: UserJourneyStep[] = []
   private sessionId: string
-  private gameId?: string
+  private gameId: string | undefined
 
   constructor(gameId?: string) {
     this.gameId = gameId

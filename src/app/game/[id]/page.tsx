@@ -74,12 +74,8 @@ export async function generateMetadata(
   }
 }
 
-// 静态生成路径
-export async function generateStaticParams() {
-  return gameData.games.map((game) => ({
-    id: game.id,
-  }))
-}
+// 禁用静态生成，使用动态渲染
+export const dynamic = 'force-dynamic'
 
 export default async function GameDetailPage({ params }: GameDetailPageProps) {
   const { id } = await params
