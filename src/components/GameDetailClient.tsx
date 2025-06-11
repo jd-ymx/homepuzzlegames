@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import { ArrowLeft, Gamepad2, Star, Clock, Users, Monitor } from 'lucide-react'
 import { Game, Category } from '@/types'
 import GameCard from './GameCard'
@@ -174,18 +175,21 @@ export default function GameDetailClient({ game, relatedGames, categories }: Gam
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {game.screenshots.map((screenshot, index) => (
                       <div key={index} className="relative group">
-                        <img
-                          src={screenshot}
-                          alt={`${game.title} screenshot ${index + 1}`}
+                        <div 
                           className="w-full aspect-[9/16] object-cover rounded-lg bg-gray-100 transition-transform duration-200 group-hover:scale-105 cursor-pointer shadow-sm hover:shadow-md"
-                          onError={(e) => {
-                            e.currentTarget.style.display = 'none'
-                          }}
                           onClick={() => {
                             // 点击图片时在新窗口中打开大图
                             window.open(screenshot, '_blank', 'noopener,noreferrer')
                           }}
-                        />
+                        >
+                          <Image
+                            src={screenshot}
+                            alt={`${game.title} screenshot ${index + 1}`}
+                            width={300}
+                            height={533}
+                            className="w-full h-full object-cover rounded-lg"
+                          />
+                        </div>
                         <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-200 rounded-lg"></div>
                       </div>
                     ))}
@@ -196,13 +200,12 @@ export default function GameDetailClient({ game, relatedGames, categories }: Gam
               {/* 主缩略图 (如果没有screenshots则显示) */}
               {(!game.screenshots || game.screenshots.length === 0) && game.thumbnail && (
                 <div className="relative">
-                  <img
+                  <Image
                     src={game.thumbnail}
                     alt={game.title}
+                    width={800}
+                    height={256}
                     className="w-full h-48 sm:h-56 lg:h-64 object-cover rounded-lg bg-gray-100"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none'
-                    }}
                   />
                 </div>
               )}
