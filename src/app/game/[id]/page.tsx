@@ -74,15 +74,11 @@ export async function generateMetadata(
   }
 }
 
-// 生成静态参数
-export async function generateStaticParams() {
-  return gameData.games.map((game) => ({
-    id: game.id,
-  }))
-}
-
 // 启用动态渲染以支持更好的用户体验
 export const dynamic = 'force-dynamic'
+
+// 配置Edge Runtime以支持Cloudflare Pages
+export const runtime = 'edge'
 
 export default async function GameDetailPage({ params }: GameDetailPageProps) {
   const { id } = await params

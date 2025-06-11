@@ -21,34 +21,37 @@ git push origin main
 
 ### 3. 配置构建设置
 在 Cloudflare Pages 构建配置中设置：
-- **Framework preset**: Next.js (Static HTML Export)
-- **Build command**: `npm run build`
-- **Build output directory**: `.next`
+- **Framework preset**: Next.js
+- **Build command**: `npx @cloudflare/next-on-pages@1`
+- **Build output directory**: `.vercel/output/static`
 - **Root directory**: `/` (保持默认)
 - **Node.js version**: 18.x 或更高
 
 ### 4. 重要配置说明
-⚠️ **不要使用 wrangler.toml 文件** - 已删除该文件以避免配置冲突
-✅ **使用 Web 界面配置** - 在 Cloudflare Pages 中直接配置构建设置更稳定
+✅ **使用 Cloudflare Pages 的 Next.js 集成** - 自动处理 Edge Runtime 和优化
+✅ **Edge Runtime 配置** - 动态路由已配置为使用 Edge Runtime
+⚠️ **不要使用静态导出模式** - 使用完整的 Next.js 功能
 
 ### 5. 自定义域名
 部署完成后，您可以在 Cloudflare Pages 中设置自定义域名 `webpuzzlegames`
 
 ## 项目特性
 ✅ Next.js 15.3.3 完全兼容
-✅ 静态站点生成 (SSG) 优化
+✅ Edge Runtime 优化
 ✅ 响应式设计
 ✅ 图片优化
 ✅ SEO 友好
-✅ 所有游戏页面预渲染
-✅ 快速加载性能
+✅ 动态渲染游戏页面
+✅ Cloudflare Edge 性能优化
 
 ## 构建验证
 项目已通过以下验证:
 - ✅ TypeScript 类型检查
 - ✅ ESLint 代码质量
 - ✅ Next.js 构建成功
-- ✅ 所有路由预渲染
+- ✅ Edge Runtime 配置正确
+- ✅ 静态页面(主页、游戏列表)预渲染
+- ✅ 动态页面(游戏详情)Edge Runtime
 - ✅ 图片组件优化
 - ✅ Cloudflare Pages 兼容性
 
@@ -56,16 +59,17 @@ git push origin main
 
 ### 如果部署仍然失败：
 
-1. **确保 Framework preset 设置正确**
-   - 选择 "Next.js (Static HTML Export)" 而不是 "Next.js"
-   - 或者选择 "None" 然后手动配置
-
-2. **手动配置构建设置**
+1. **确保构建设置完全正确**
    ```
-   Build command: npm run build
-   Build output directory: .next
+   Framework preset: Next.js
+   Build command: npx @cloudflare/next-on-pages@1
+   Build output directory: .vercel/output/static
    Node.js version: 18.x
    ```
+
+2. **验证 Edge Runtime 配置**
+   - 动态路由 `/game/[id]` 已配置为使用 Edge Runtime
+   - 这是 Cloudflare Pages 部署的必需配置
 
 3. **检查 GitHub 仓库**
    - 确保最新代码已推送
