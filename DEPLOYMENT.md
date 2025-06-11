@@ -32,6 +32,14 @@ git push origin main
 ✅ **Edge Runtime 配置** - 动态路由已配置为使用 Edge Runtime
 ⚠️ **不要使用静态导出模式** - 使用完整的 Next.js 功能
 
+### 4.1. 必需的兼容性设置
+⚠️ **重要**: 部署成功后需要设置 Node.js 兼容性标识
+1. 进入 Cloudflare Pages 项目设置
+2. 转到 Settings → Functions → Compatibility flags
+3. 添加标识: `nodejs_compat`
+4. 应用到 Production 和 Preview 环境
+5. 重新部署项目
+
 ### 5. 自定义域名
 部署完成后，您可以在 Cloudflare Pages 中设置自定义域名 `webpuzzlegames`
 
@@ -75,12 +83,23 @@ git push origin main
    - 确保最新代码已推送
    - 确保 package.json 和 next.config.js 都已提交
 
-4. **环境变量设置**
+4. **添加兼容性标识** ⚠️ **重要**
+   在 Cloudflare Pages Settings → Functions → Compatibility flags 中添加：
+   ```
+   nodejs_compat
+   ```
+   **注意事项：**
+   - 输入时确保没有前后空格
+   - 不要添加引号或其他字符
+   - 使用下划线 `_` 而不是连字符 `-`
+
+5. **环境变量设置**
    在 Cloudflare Pages 设置 → Environment variables 中添加：
    ```
    NODE_VERSION = 18
    ```
 
-5. **如果遇到构建错误**
+6. **如果遇到构建错误**
    - 检查 Node.js 版本是否为 18.x 或更高
+   - 确保已添加 `nodejs_compat` 兼容性标识
    - 清除 Cloudflare Pages 缓存后重新部署 
